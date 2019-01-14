@@ -1,7 +1,8 @@
 "use strict";
 
 const mongoose = require("mongoose"),
-  Task = mongoose.model("Task");
+  Task = mongoose.model("Task"),
+  CONST = require("../components/CONST");
 
 exports.list_all_tasks = (req, res) => {
   Task.find({}, (err, task) => {
@@ -14,7 +15,7 @@ exports.create_a_task = (req, res) => {
   const new_task = new Task(req.body);
   new_task.save((err, task) => {
     if (err) res.send(err);
-    res.json(task);
+    res.status(CONST.HTTP_STATUS_CODE.CREATED).json(task);
   });
 };
 
