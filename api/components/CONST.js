@@ -25,7 +25,5 @@ module.exports = {
     AUTH_SUCCESS: "authentication succeeded",
     AUTH_FAILED: "authentication failed",
     NO_AUTH: "User is not authenticated"
-  },
-  INGEST_URL: process.env.INGEST_URL || "",
-  SCHEDULE_URL: process.env.SCHEDULE_URL || ""
+  }
 };
